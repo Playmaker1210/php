@@ -1,0 +1,9 @@
+id;Név;Magasság(cm);Tömeg(kg)
+1;Tesztelek;178;86
+2;Macska Jancsi;169;58
+3;Kis Tamás;185;85
+4;Nagy Petra;172;55
+5;Kovács Sándor;178;82
+6;Tóth József;189;102
+9;Kiss Lajos;168;85
+10;Nagy József;201;125
