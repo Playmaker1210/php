@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <?php
 include "kozos/kapcsolat.php";
-$adatok = $kapcsolat->readAll($kapcsolat->getDBC(), 'pizzak');
+
+$employees = $kapcsolat->readAll($kapcsolat->getDBC(), 'employees');
+
+print_r($employees);
+echo "<hr>";
 ?>
-
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Pizzák</title>
+        <title>Employees</title>
         <link href="kozos/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
     </head>
     <body>
         <div class="container-fluid w-75">
             <a class="btn btn-info" href="insert.php">Hozzáadás</a>
             <table class="table table-info table-striped my-3" >
-                <tr>
-                    <?php foreach ($adatok[0] as $key => $value) : ?>
+                <tr>         
+                    <?php foreach ($employees[0] as $key => $value) : ?>
                         <th><?= $key; ?></th>
                     <?php endforeach; ?>
                     <!--Műveletek oszlop -->
                     <th colspan='3' style="text-align: center; width:20%;" >Műveletek</th>
                 </tr>
-
-                <?php foreach ($adatok as $sor) : ?>
+                <?php foreach ($employees as $sor) : ?>
                     <tr>
                         <?php foreach ($sor as $key => $value) : ?>
                             <?php if ($key == 'kep') : ?>
@@ -35,14 +35,14 @@ $adatok = $kapcsolat->readAll($kapcsolat->getDBC(), 'pizzak');
                         <?php endforeach; ?>
                         <!--Műveletek  létrehozás id oszlopra -->
                     <div >
-                        <td><a class="btn btn-info" href="view.php?id=<?= $sor['id']; ?>"> Megtekint </a></td>
-                        <td><a class="btn btn-info" href="update.php?id=<?= $sor['id']; ?>"> Szerkeszt </a></td>
-                        <td><a class="btn btn-info" href="delete.php?id=<?= $sor['id']; ?>"> Töröl </a></td>
+                        <td><a class="btn btn-info" href="view.php?id=<?= $sor['id'];?>tablanev=<?= "employees";?>"> Megtekint </a></td>
+                        <td><a class="btn btn-info" href="update.php?id=<?= $sor['id'];?>"> Szerkeszt </a></td>
+                        <td><a class="btn btn-info" href="delete.php?id=<?= $sor['id'];?>"> Töröl </a></td>
                     </div>
                     </tr>
                 <?php endforeach; ?>
-            </table>
-            <a class="btn btn-info" href="../index.php">Vissza</a>
+            </table>   
+            <a class="btn btn-info" href="index.php">Vissza</a>
         </div>
         <script src="kozos/bootstrap.min.js" type="text/javascript"></script>
     </body>

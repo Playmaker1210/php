@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <?php
 include "kozos/kapcsolat.php";
-$adatok = $kapcsolat->readAll($kapcsolat->getDBC(), 'pizzak');
+
+$firms = $kapcsolat->readAll($kapcsolat->getDBC(), 'firms');
+
+print_r($firms);
+echo "<hr>";
 ?>
-
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Pizzák</title>
+        <title>Firms</title>
         <link href="kozos/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
     </head>
     <body>
         <div class="container-fluid w-75">
             <a class="btn btn-info" href="insert.php">Hozzáadás</a>
             <table class="table table-info table-striped my-3" >
-                <tr>
-                    <?php foreach ($adatok[0] as $key => $value) : ?>
+                <tr>         
+                    <?php foreach ($firms[0] as $key => $value) : ?>
                         <th><?= $key; ?></th>
                     <?php endforeach; ?>
                     <!--Műveletek oszlop -->
                     <th colspan='3' style="text-align: center; width:20%;" >Műveletek</th>
                 </tr>
-
-                <?php foreach ($adatok as $sor) : ?>
+                <?php foreach ($firms as $sor) : ?>
                     <tr>
                         <?php foreach ($sor as $key => $value) : ?>
                             <?php if ($key == 'kep') : ?>
@@ -42,7 +42,7 @@ $adatok = $kapcsolat->readAll($kapcsolat->getDBC(), 'pizzak');
                     </tr>
                 <?php endforeach; ?>
             </table>
-            <a class="btn btn-info" href="../index.php">Vissza</a>
+            <a class="btn btn-info" href="index.php">Vissza</a>
         </div>
         <script src="kozos/bootstrap.min.js" type="text/javascript"></script>
     </body>
