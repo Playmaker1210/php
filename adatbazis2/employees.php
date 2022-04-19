@@ -2,7 +2,8 @@
 <?php
 include "kozos/kapcsolat.php";
 
-$employees = $kapcsolat->readAll($kapcsolat->getDBC(), 'employees');
+$t_employees = 'employees';
+$employees = $kapcsolat->readAll($kapcsolat->getDBC(), "employees");
 
 print_r($employees);
 echo "<hr>";
@@ -35,7 +36,7 @@ echo "<hr>";
                         <?php endforeach; ?>
                         <!--Műveletek  létrehozás id oszlopra -->
                     <div >
-                        <td><a class="btn btn-info" href="view.php?id=<?= $sor['id'];?>tablanev=<?= "employees";?>"> Megtekint </a></td>
+                        <td><a class="btn btn-info" href='view.php?id=<?= $sor['id'];?> '> Megtekint </a></td>
                         <td><a class="btn btn-info" href="update.php?id=<?= $sor['id'];?>"> Szerkeszt </a></td>
                         <td><a class="btn btn-info" href="delete.php?id=<?= $sor['id'];?>"> Töröl </a></td>
                     </div>

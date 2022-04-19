@@ -2,27 +2,30 @@
 <?php
 include "kozos/kapcsolat.php";
 
-$alkalmazottak = $kapcsolat->readAll($kapcsolat->getDBC(),''); //hogyan kapom meg a tabla nevet
+print_r($_GET);
+
+$alkalmazottak = $kapcsolat->readAll($kapcsolat->getDBC(), 'employees'); //hogyan kapom meg a tabla nevet
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Megtekintés</title>
-        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="kozos/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div style="margin-left: 10%;">
         <?php
-            $test = $kapcsolat->readOne($kapcsolat->getDBC(), 'pizzak', $_GET['id']);
-            print_r($test);
+            $test = $kapcsolat->readOne($kapcsolat->getDBC(), 'employees', $_GET['id']);
+            //print_r($test);
 
             echo "<ul>";
             foreach($test[0] as $key => $value){
-                echo "<li><b>".$key.":</b> ".$value."</li>";
+                echo "<li><b>".$key.":</b> ".$value."</li><hr>";
             }
-            echo "</ul>";        
+            echo "</ul>";      
         ?>
-        <a href="f2.php" class="btn btn-info" role="button">Vissza</a>
+        <a href="employees.php" class="btn btn-info" role="button">Vissza</a>
         </div>
+        <script src="kozos/bootstrap.min.js"></script>
     </body>
 </html>

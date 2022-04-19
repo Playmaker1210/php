@@ -7,7 +7,7 @@ $utasitas = $kapcsolat->getDBC()->prepare($sql);
 $utasitas->execute();
 
 $tablak = $utasitas->fetchAll(PDO::FETCH_COLUMN);
-//print_r($tablak);
+print_r($tablak);
 ?>
 <html>
     <head>
