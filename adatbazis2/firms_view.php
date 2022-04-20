@@ -2,9 +2,11 @@
 <?php
 include "kozos/kapcsolat.php";
 
+$tabla = "firms";
+
 print_r($_GET);
 
-$alkalmazottak = $kapcsolat->readAll($kapcsolat->getDBC(), 'employees'); //hogyan kapom meg a tabla nevet
+$alkalmazottak = $kapcsolat->readAll($kapcsolat->getDBC(), $tabla);
 ?>
 <html>
     <head>
@@ -15,7 +17,7 @@ $alkalmazottak = $kapcsolat->readAll($kapcsolat->getDBC(), 'employees'); //hogya
     <body>
         <div style="margin-left: 10%;">
         <?php
-            $test = $kapcsolat->readOne($kapcsolat->getDBC(), 'employees', $_GET['id']);
+            $test = $kapcsolat->readOne($kapcsolat->getDBC(), $tabla, $_GET['id']);
             //print_r($test);
 
             echo "<ul>";

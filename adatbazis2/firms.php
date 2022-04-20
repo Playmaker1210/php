@@ -35,7 +35,7 @@ echo "<hr>";
                         <?php endforeach; ?>
                         <!--Műveletek  létrehozás id oszlopra -->
                     <div >
-                        <td><a class="btn btn-info" href="view.php?id=<?= $sor['id']; ?>"> Megtekint </a></td>
+                        <td><a class="btn btn-info" href="firms_view.php?id=<?= $sor['id']; ?>"> Megtekint </a></td>
                         <td><a class="btn btn-info" href="update.php?id=<?= $sor['id']; ?>"> Szerkeszt </a></td>
                         <td><a class="btn btn-info" href="delete.php?id=<?= $sor['id']; ?>"> Töröl </a></td>
                     </div>
