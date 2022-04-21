@@ -15,8 +15,7 @@
         try{
             //$kapcsolat->deleteOne($kapcsolat->getDBC(), 'employees', $id); //rekord torlese az uj adatok atadasa elott
             //$uj = "UPDATE `employees` (`id`, `name`, `address`, `salary`) VALUES ('$id','$nev','$address','$salary')"; //sql parancs
-            $sql = 'UPDATE `employees` SET name=$name WHERE id=$id';
-            // address=$address salary=$salary
+            $sql = "UPDATE `employees` SET name='$name' and address='$address' and salary='$salary' WHERE id='$id'";
             $kapcsolat->getDBC()->exec($sql);
             echo "Az új rekord létrehozása sikeres!";
         }catch(PDOException $e){
