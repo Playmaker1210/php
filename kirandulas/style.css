@@ -1,0 +1,37 @@
+header{
+    background-color: darkgray;
+    color: white;
+    
+}
+
+#headerKepDiv{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#textK{  
+     /*Nem mukodott*/
+}
+
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-container div{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+}
+
+.kartya{
+    border: 1px solid black;
+}
+
+footer{
+    background-color: darkgray;
+    color: white;
+}
+

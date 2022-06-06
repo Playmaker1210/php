@@ -15,13 +15,17 @@
         try{
             //$kapcsolat->deleteOne($kapcsolat->getDBC(), 'employees', $id); //rekord torlese az uj adatok atadasa elott
             //$uj = "UPDATE `employees` (`id`, `name`, `address`, `salary`) VALUES ('$id','$nev','$address','$salary')"; //sql parancs
-            $sql = "UPDATE `employees` SET name='$name' and address='$address' and salary='$salary' WHERE id='$id'";
+            $sql = "UPDATE `employees` SET name='$name' WHERE id='$id'";
+            $kapcsolat->getDBC()->exec($sql);
+            $sql = "UPDATE `employees` SET address='$address' WHERE id='$id'";
+            $kapcsolat->getDBC()->exec($sql);
+            $sql = "UPDATE `employees` SET salary='$salary' WHERE id='$id'";
             $kapcsolat->getDBC()->exec($sql);
             echo "Az új rekord létrehozása sikeres!";
         }catch(PDOException $e){
             echo $sql."<br>".$e->getMessage();
         }
     ?>
-    <br><br><a href="employees.php" class="btn btn-info" role="button">Vissza</a>
+    <br><br><a href="employees/employees.php" class="btn btn-info" role="button">Vissza</a>
     </body>
 </html>

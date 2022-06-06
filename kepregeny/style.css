@@ -1,0 +1,65 @@
+*{
+    font-family: Tahoma;
+    font-size: 14px;
+}
+
+body{
+    background-image: url('\SRC_képregény\\hatter.jpg');
+    margin: 2%;
+}
+
+input{
+    width: 30%;
+}
+
+table{
+    background-color: lightblue;
+    width: 75%;
+}
+
+th{
+    padding-left: 0.5%;
+}
+
+td{
+    padding-left: 0.5%;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+button{
+    border-radius: 5px;
+}
+
+.cim{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Tahoma;
+    margin-left: 19%;
+}
+
+.title{
+    float:left;
+    font-weight: 500;
+}
+
+.bevitel{
+    margin-left: 10%;
+}
+
+.bevitel input{
+    margin-right: 3%;
+}
+
+.sor{
+    margin-bottom: 1.5%;
+}
+
+.tabla{
+    /*float: left;*/
+}
+
+
+
