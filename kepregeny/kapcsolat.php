@@ -24,7 +24,7 @@ class Kapcsolat{
         return $this->dbc;
     }
 
-    //tabla beolvasasa
+    
     public function readAll($dbc, $table) {
         $sql = "SELECT * FROM $table;";
         $utasitas = $dbc->prepare($sql);
@@ -36,6 +36,14 @@ class Kapcsolat{
     //egy rekord beolvasasa
     public function readOne($dbc, $table, $id) {
         $sql = "SELECT * FROM $table WHERE id=$id;";
+        $utasitas = $dbc->prepare($sql);
+        $utasitas->execute();
+    
+        return $utasitas->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function kereses($dbc, $table, $szereplo) {
+        $sql = "SELECT * FROM $table WHERE Szereplők = '$szereplo'";
         $utasitas = $dbc->prepare($sql);
         $utasitas->execute();
     
@@ -76,18 +84,6 @@ class Kapcsolat{
         //print_r($sql);
         $utasitas = $dbc->prepare($sql);
         $utasitas->execute();
-    }
-
-    public function lekerdezes($tabla, $keys){
-        foreach ($tabla as $key => $value) {
-            echo "<tr>";
-            foreach ($keys as $key2 => $value2) {
-                if($value2 == "id"){
-                    continue;
-                }
-                echo "<td>".$value[$value2]."</td>";
-            }
-        }
     }
 }
 

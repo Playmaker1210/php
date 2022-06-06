@@ -29,8 +29,9 @@ table, th, td{
     border: 1px solid black;
 }
 
-button{
+button, .gomb{
     border-radius: 5px;
+    width: 6%;
 }
 
 .cim{
@@ -49,17 +50,10 @@ button{
     margin-left: 10%;
 }
 
-.bevitel input{
+.bevitel input:first-child{
     margin-right: 3%;
 }
 
 .sor{
     margin-bottom: 1.5%;
 }
-
-.tabla{
-    /*float: left;*/
-}
-
-
-
