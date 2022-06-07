@@ -7,7 +7,7 @@ class Kapcsolat{
     private $password = '';
     private $dbname = 'kepregeny';
     private $dbc;
-    //konstruktor
+
     public function __construct(){
         try {
             $datasourcename = "mysql:host=$this->host;dbname=$this->dbname";
@@ -23,8 +23,7 @@ class Kapcsolat{
     public function getDBC(){
         return $this->dbc;
     }
-
-    
+  
     public function readAll($dbc, $table) {
         $sql = "SELECT * FROM $table;";
         $utasitas = $dbc->prepare($sql);

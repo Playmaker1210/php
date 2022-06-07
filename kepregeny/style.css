@@ -32,6 +32,7 @@ table, th, td{
 button, .gomb{
     border-radius: 5px;
     width: 6%;
+    padding-right: 6%;
 }
 
 .cim{

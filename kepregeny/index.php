@@ -8,7 +8,7 @@
     
     if(isset($_POST['passed'])){
         $tabla = $kapcsolat->readAll($kapcsolat->getDBC(), "comics");
-        print_r($tabla);
+        //print_r($tabla);
     }
 
 
@@ -23,7 +23,7 @@
                     $adatok[$key] = $value;
                 }
             }
-            print_r($adatok);
+            //print_r($adatok);
             $kapcsolat->insert($kapcsolat->getDBC(), 'comics', $adatok);
         }  
     } catch (Exception) {
@@ -142,7 +142,7 @@
                 </div>
                 <div align="right">
                     <form method="post" action="index.php">                      
-                        <button type="submit" name="passed" id="passed">Lekérdézés</button>
+                        <button type="submit" name="passed" id="passed">Lekérdézés  </button>
                     </form>
                 </div>
             </div>
